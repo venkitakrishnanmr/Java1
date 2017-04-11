@@ -1,0 +1,30 @@
+1.)create table Product(productId number(4)primary key,
+proddesc varchar(29)not null,
+Dom Date,price number(7,2),
+ManuName varchar(25)not null, 
+BatchId number(4)unique)
+2.)Create Table Batch(BatchID char(4) primary key,BatchDesc varchar(30) not null,StartDate date,EndDate date,ClassId char(4))
+3.)Create Table Employe(Empcode varchar2(6) primary key,
+Ename varchar2(15) not null,Deptno Number(4) references Department(DeptId))
+4.)Create Table Batch(BatchID char(4) primary key,BatchDesc varchar(30) not null,StartDate date,EndDate date,ClassId char(4))
+5)Create Table Trainer(TrainerID number(4) primary key,
+TrainerName varchar2(25) not null)
+6.)Create Table BatchDetails(BatchId number(4) primary key,
+BatchDesc varchar(25) not null,
+ClassId number(4) references Class(classId),TrainerId number(4) references Trainer(TrainerId))
+7.)insert into Employee values(10,'priya','Female','21-jan-1995','8602320342','678jhhjhh')
+8.)update Employee set phone='33324' where Empno=498
+9.)stored procedure:
+Create or Replace Procedure InsertEmploye
+(eno varchar2,ename varchar2,deptno number)
+as
+begin
+insert into Employe values(eno,ename,deptno);
+end;
+10)Create or Replace Procedure UpdateEmployee
+(empno number,ename varchar2,passport varchar2)
+as
+begin
+update Employee set ename='priya',passport='8098' where empno='11';
+end;
+
